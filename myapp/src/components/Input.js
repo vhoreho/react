@@ -8,6 +8,7 @@ export default function Input({ addTodo }) {
 
   function handleAddTodo() {
     addTodo(value)
+    setValue('')
   }
 
   return (

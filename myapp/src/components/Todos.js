@@ -44,10 +44,7 @@ export default function Todos() {
     }
 
     function handleDeleteTodo(id) {
-        console.log(id);
-        let filteredTodos = [...todos];
-        filteredTodos.filter(todo => todo.id != id);
-        console.log(filteredTodos);
+        let filteredTodos = todos.filter(todo => todo.id !== id);
         setTodos(filteredTodos);
     }
 
