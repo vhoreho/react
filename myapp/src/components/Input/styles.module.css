@@ -1,0 +1,15 @@
+.input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.field {
+    font-size: 2rem;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.btn {
+    font-size: 2rem;
+    padding: 0 10px;
+}
