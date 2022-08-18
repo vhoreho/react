@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import StringToUpperCase from '../../../utils/string';
 
 const Todo = styled.li`
     display: flex;
@@ -44,24 +45,24 @@ const DeleteButton = styled.button`
 `
 
 export function TodoItem({ todo, deleteTodo }) {
-    const { title, completed, id } = todo;
-    const [done, setDone] = useState(completed);
+  const { title, completed, id } = todo;
+  const [done, setDone] = useState(completed);
 
-    function handleCompleted() {
-        setDone(!done);
-    }
+  function handleCompleted() {
+    setDone(!done);
+  }
 
-    function handleDeleteBtn(id) {
-        deleteTodo(id);
-    }
+  function handleDeleteBtn(id) {
+    deleteTodo(id);
+  }
 
-    return (
-        <Todo>
-            <Title completed={done}>{title}</Title>
-            <div>
-                <Button onClick={handleCompleted}>Done</Button>
-                <DeleteButton onClick={() => handleDeleteBtn(id)}>Delete</DeleteButton>
-            </div>
-        </Todo>
-    )
+  return (
+    <Todo>
+      <Title completed={done}>{StringToUpperCase(title)}</Title>
+      <div>
+        <Button onClick={handleCompleted}>Done</Button>
+        <DeleteButton onClick={() => handleDeleteBtn(id)}>Delete</DeleteButton>
+      </div>
+    </Todo>
+  )
 }
